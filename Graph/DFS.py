@@ -3,12 +3,10 @@ def depthFirstSearch(V, E):
         visited[node] = True
         temp.append(node)
         for ch in adjlist[node]:
-            if not visited[ch]:
-                dfs(ch, temp)
+            if not visited[ch]: dfs(ch, temp)
 
     adjlist = dict()
-    for i in range(V):
-        adjlist[i] = []
+    for i in range(V): adjlist[i] = []
     for _ in range(E):
         node, edge = map(int, input().split(' '))
         adjlist[node].append(edge)
@@ -29,8 +27,7 @@ V, E = map(int, input().split(' '))
 ans = depthFirstSearch(V, E)
 print()
 print(len(ans))
-for ch in ans:
-    print(*sorted(ch))
+for ch in ans: print(*sorted(ch))
 '''    
 10 9
 1 0
